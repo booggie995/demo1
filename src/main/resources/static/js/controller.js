@@ -5,6 +5,9 @@ app.controller('registerUserController',
             method: 'POST',
             url: 'api/user/',
             data: $scope.user,
+            headers: {
+                'Content-Type': 'application/json'
+            }
         }).then(function(response) {
             $location.path("/list-all-users");
             $route.reload();

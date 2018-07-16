@@ -23,7 +23,7 @@ import com.example.demo.dto.UserErrorType;
 import com.example.demo.repository.UserJpaRepository;
 
 @RestController
-@RequestMapping("api/user")
+@RequestMapping("/api/user")
 public class UserController {
 	@Autowired
 	private UserJpaRepository  userJpaRepository;
