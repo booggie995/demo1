@@ -10,6 +10,7 @@ public class AuthentificationController {
 	
 	@RequestMapping("/user")
 	public Principal user(Principal user) {
+		System.out.println("++++++++++++++++PRINCIPAL  "+user.getName());
 	return user;
 	}
 

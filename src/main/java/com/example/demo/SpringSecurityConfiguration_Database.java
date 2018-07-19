@@ -38,13 +38,11 @@ public class SpringSecurityConfiguration_Database extends WebSecurityConfigurerA
 		 */
 
 		http
-		.httpBasic()
-		.realmName("User Registration System")
-		.and()
-		.authorizeRequests()
-		.antMatchers("template/login.html", "template/home.html","/").permitAll()
-		.anyRequest().authenticated()
-		.and()
+	      .httpBasic().and()
+	      .authorizeRequests()
+	        .antMatchers("template/login.html").permitAll()
+	        .anyRequest()
+	        .authenticated().and()
 		.csrf()
 		.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
 	}

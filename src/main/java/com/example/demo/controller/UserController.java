@@ -31,8 +31,7 @@ public class UserController {
 	
 	
 	
-	/* /////////////////GET ALL USERS/////////////////////// */
-
+	/*GET ALL USERS*/
 	@GetMapping("/")
 	public ResponseEntity<List<UserDTO>> listAllUsers() {
 		List<UserDTO> users = userJpaRepository.findAll();
@@ -47,8 +46,7 @@ public class UserController {
 	
 	
 	
-	/* /////////////////CREATE USER/////////////////////// */
-
+	/*CREATE USER*/
 	@PostMapping(value = "/", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<UserDTO> createUser(@Valid @RequestBody final UserDTO user) {
 
@@ -60,13 +58,13 @@ public class UserController {
 		userJpaRepository.save(user);
 		return new ResponseEntity<UserDTO>(user, HttpStatus.CREATED);
 	}
-	//////////////////////////////////////////////////////////////////
-
-	
-	
 	
 
-	/* /////////////////CREATE LIST USER/////////////////////// */
+	
+	
+	
+
+	/*CREATE LIST USERS*/
 	@PostMapping(value = "/list", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<UserDTO>> createUserList(@RequestBody final List<UserDTO> users) {
 
@@ -76,8 +74,7 @@ public class UserController {
 		return new ResponseEntity<List<UserDTO>>(users, HttpStatus.CREATED);
 	}
 
-	/* /////////////////GET USER/////////////////////// */
-
+	/*GET USER BY ID*/
 	@GetMapping("/{id}")
 	public ResponseEntity<UserDTO> getUser(@PathVariable final Long id) {
 		UserDTO user = userJpaRepository.findById(id).orElse(null);
@@ -87,13 +84,11 @@ public class UserController {
 		}
 		return new ResponseEntity<UserDTO>(user, HttpStatus.OK);
 	}
-	//////////////////////////////////////////////////////////////////
 
 	
 	
 
-	/* /////////////////UPDATE USER/////////////////////// */
-
+	/*UPDATE USER*/
 	@PutMapping("/{id}")
 	public ResponseEntity<UserDTO> updateUser(@PathVariable final Long id, @RequestBody UserDTO userDTO) {
 
@@ -111,11 +106,7 @@ public class UserController {
 		return new ResponseEntity<UserDTO>(user, HttpStatus.OK);
 	}
 
-	//////////////////////////////////////////////////////////////////
-	
-	
-	/* /////////////////DELETE USER/////////////////////// */
-	
+	/*DELETE USER*/
 	@PreAuthorize("hasAuthority('ADMIN')")
 	@DeleteMapping("/{id}")
 	public ResponseEntity<UserDTO> deleteUser(@PathVariable Long id) {
@@ -129,10 +120,9 @@ public class UserController {
 
 		return new ResponseEntity<UserDTO>(HttpStatus.NO_CONTENT);
 	}
-	//////////////////////////////////////////////////////////////////
 
-	
-	
+
+		
 	
 	
 	public UserJpaRepository getUserJpaRepository() {

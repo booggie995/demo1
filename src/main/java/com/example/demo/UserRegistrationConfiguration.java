@@ -13,4 +13,7 @@ public class UserRegistrationConfiguration {
 		messageBundle.setDefaultEncoding("UTF-8");
 		return messageBundle;
 	}
+	
+
+
 }

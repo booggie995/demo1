@@ -33,7 +33,8 @@ app.controller('homeController', function($rootScope, $scope, $http, $location, 
 app.controller('loginController', function($rootScope, $scope, $http, $location, $route) {
     
 	$scope.credentials = {};
-    $scope.resetForm = function() {$scope.credentials = null;}
+    
+	$scope.resetForm = function() {$scope.credentials = null;}
     
     var authenticate = function(credentials, callback) {
         var headers = $scope.credentials ? { authorization: "Basic " + btoa($scope.credentials.username + ":" + $scope.credentials.password)} : {};
@@ -51,16 +52,21 @@ app.controller('loginController', function($rootScope, $scope, $http, $location,
             callback && callback();
         });
     }
+    
     authenticate();
+    
     $scope.loginUser = function() {
-        authenticate($scope.credentials, function() {
-            if ($rootScope.authenticated) {
+        
+    	authenticate($scope.credentials, function() {
+            
+    		if ($rootScope.authenticated) {
                 $location.path("/");
                 $scope.loginerror = false;
             } else {
                 $location.path("/login");
                 $scope.loginerror = true;
             }
+    		
         });
     };
 });
