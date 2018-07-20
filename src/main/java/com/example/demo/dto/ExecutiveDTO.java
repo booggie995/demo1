@@ -8,79 +8,72 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="executive")
+@Table(name = "executive")
 public class ExecutiveDTO {
-	
-	
-	public ExecutiveDTO() {};
-	
-	public ExecutiveDTO(String username, String password, boolean isEnabled, String role) {
-		super();
-		this.username = username;
-		this.password = password;
-		this.isEnabled = isEnabled;
-		this.role = role;
-	}
+    public ExecutiveDTO() {
+    }
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id")
-	private long id;
-	
-	
-	@Column(name="username")
-	private String username;
-	
-	@Column(name="password")
-	private String password;
-	
-	@Column(name="enabled")
-	private boolean isEnabled;
-	
-	@Column(name="role")
-	private String role;
+    public ExecutiveDTO(String username, String password, boolean isEnabled, String role) {
+        this.username = username;
+        this.password = password;
+        this.isEnabled = isEnabled;
+        this.role = role;
+    }
 
-	public long getId() {
-		return id;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private long id;
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    @Column(name = "username")
+    private String username;
 
-	public String getUsername() {
-		return username;
-	}
+    @Column(name = "password")
+    private String password;
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
+    @Column(name = "enabled")
+    private boolean isEnabled;
 
-	public String getPassword() {
-		return password;
-	}
+    @Column(name = "role")
+    private String role;
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public boolean isEnabled() {
-		return isEnabled;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public void setEnabled(boolean isEnabled) {
-		this.isEnabled = isEnabled;
-	}
+    public String getUsername() {
+        return username;
+    }
 
-	public String getRole() {
-		return role;
-	}
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-	public void setRole(String role) {
-		this.role = role;
-	}
-	
-	
-	
+    public String getPassword() {
+        return password;
+    }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public boolean isEnabled() {
+        return isEnabled;
+    }
+
+    public void setEnabled(boolean isEnabled) {
+        this.isEnabled = isEnabled;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 }

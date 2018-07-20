@@ -5,62 +5,67 @@ import java.util.List;
 import java.util.Map;
 
 public class FieldValidationErrorDetails {
+    private String errorTitle;
+    private int errorStatus;
+    private String errorDetail;
+    private long errorTimeStamp;
+    private String errorPath;
+    private String errorDeveloperMessage;
+    private Map<String, List<FieldValidationError>> errors = new HashMap<>();
 
-	private String error_title;
-	private int error_status;
-	private String error_detail;
-	private long error_timeStamp;
-	private String error_path;
-	private String error_developer_Message;
-	private Map<String, List<FieldValidationError>> errors = new HashMap<String, List<FieldValidationError>>();
-	
-	
-	
-	
-	public String getError_title() {
-		return error_title;
-	}
-	public void setError_title(String error_title) {
-		this.error_title = error_title;
-	}
-	public int getError_status() {
-		return error_status;
-	}
-	public void setError_status(int error_status) {
-		this.error_status = error_status;
-	}
-	public String getError_detail() {
-		return error_detail;
-	}
-	public void setError_detail(String error_detail) {
-		this.error_detail = error_detail;
-	}
-	public long getError_timeStamp() {
-		return error_timeStamp;
-	}
-	public void setError_timeStamp(long error_timeStamp) {
-		this.error_timeStamp = error_timeStamp;
-	}
-	public String getError_path() {
-		return error_path;
-	}
-	public void setError_path(String error_path) {
-		this.error_path = error_path;
-	}
-	public String getError_developer_Message() {
-		return error_developer_Message;
-	}
-	public void setError_developer_Message(String error_developer_Message) {
-		this.error_developer_Message = error_developer_Message;
-	}
-	public Map<String, List<FieldValidationError>> getErrors() {
-		return errors;
-	}
-	public void setErrors(Map<String, List<FieldValidationError>> errors) {
-		this.errors = errors;
-	}
-	
-	
-	
+    public String getErrorTitle() {
+        return errorTitle;
+    }
+
+    public void setErrorTitle(String errorTitle) {
+        this.errorTitle = errorTitle;
+    }
+
+    public int getErrorStatus() {
+        return errorStatus;
+    }
+
+    public void setErrorStatus(int errorStatus) {
+        this.errorStatus = errorStatus;
+    }
+
+    public String getErrorDetail() {
+        return errorDetail;
+    }
+
+    public void setErrorDetail(String errorDetail) {
+        this.errorDetail = errorDetail;
+    }
+
+    public long getErrorTimeStamp() {
+        return errorTimeStamp;
+    }
+
+    public void setErrorTimeStamp(long errorTimeStamp) {
+        this.errorTimeStamp = errorTimeStamp;
+    }
+
+    public String getErrorPath() {
+        return errorPath;
+    }
+
+    public void setErrorPath(String errorPath) {
+        this.errorPath = errorPath;
+    }
+
+    public String getErrorDeveloperMessage() {
+        return errorDeveloperMessage;
+    }
+
+    public void setErrorDeveloperMessage(String errorDeveloperMessage) {
+        this.errorDeveloperMessage = errorDeveloperMessage;
+    }
+
+    public Map<String, List<FieldValidationError>> getErrors() {
+        return errors;
+    }
+
+    public void setErrors(Map<String, List<FieldValidationError>> errors) {
+        this.errors = errors;
+    }
 }
-
